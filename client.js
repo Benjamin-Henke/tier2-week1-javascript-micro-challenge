@@ -1,6 +1,6 @@
 console.log('**JS Micro Challenge**');
 
-// 100-Addition
+// --100-Addition--
 // Create a function that takes two numbers and return the sum
 function sumOfTwoNumbers (numberOne, numberTwo) {
   let sum = numberOne + numberTwo;
@@ -13,7 +13,7 @@ console.log('13 + 15 equals =',sumOfTwoNumbers(13, 15));        // expected outp
 console.log('2 + 54 equals =',sumOfTwoNumbers(2, 54));          // expected output 56
 
 
-// 110-Conditional
+// --110-Conditional--
 // Create a function that checks two numbers.
 // If the first number is bigger, return 'The first number was bigger!'.
 // if the second number is bigger, return 'The second number was bigger!'.
@@ -32,6 +32,22 @@ function compareTwoNumbers (numberOne, numberTwo) {
 } // end compareTwoNumbers
 
 console.log('110-Conditonal');
-console.log(compareTwoNumbers(7, 5));           // output 'The first number was bigger!'
-console.log(compareTwoNumbers(5, 7));           // output 'The second number was bigger!'
-console.log(compareTwoNumbers(7, 7));           // output 'The numbers are the same!'
+console.log(compareTwoNumbers(7, 5));           // expected output 'The first number was bigger!'
+console.log(compareTwoNumbers(5, 7));           // expected output 'The second number was bigger!'
+console.log(compareTwoNumbers(7, 7));           // expected output 'The numbers are the same!'
+
+
+// --120-Arrays--
+// Create a function that takes in an array.
+// Add the first and last values of the array
+
+function sumOfFirstAndLastValues (array) {
+    let sum = array[0] + array[array.length - 1];
+        return sum;
+} // end sumOfFirstAndLastValues
+
+console.log('120-Arrays');
+console.log(sumOfFirstAndLastValues([3, 5, 7, 9, 11]));         // expected output 14
+console.log(sumOfFirstAndLastValues([2, 4, 6, 8, 10]));         // expected output 12
+
+
