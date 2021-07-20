@@ -15,8 +15,23 @@ console.log('2 + 54 equals =',sumOfTwoNumbers(2, 54));          // expected outp
 
 // 110-Conditional
 // Create a function that checks two numbers.
-// If the first number is bigger, return 'The first number was was bigger!'.
+// If the first number is bigger, return 'The first number was bigger!'.
 // if the second number is bigger, return 'The second number was bigger!'.
 // If they are the same, return 'The numbers are the same!'.
 
+function compareTwoNumbers (numberOne, numberTwo) {
+    if (numberOne > numberTwo) {
+        return console.log('The first number was bigger!');
+    }
+    else if (numberOne < numberTwo) {
+        return console.log('The second number was bigger!');
+    }
+    else if (numberOne === numberTwo) {
+        return console.log('The numbers are the same!');
+    }
+} // end compareTwoNumbers
+
 console.log('110-Conditonal');
+console.log(compareTwoNumbers(7, 5));           // output 'The first number was bigger!'
+console.log(compareTwoNumbers(5, 7));           // output 'The second number was bigger!'
+console.log(compareTwoNumbers(7, 7));           // output 'The numbers are the same!'
