@@ -50,4 +50,64 @@ console.log('120-Arrays');
 console.log(sumOfFirstAndLastValues([3, 5, 7, 9, 11]));         // expected output 14
 console.log(sumOfFirstAndLastValues([2, 4, 6, 8, 10]));         // expected output 12
 
+// Q: Unsure of why it also returning a line with undefined 
 
+
+// --130-LoopsArraysAndConcatentation--
+// Create a function that takes two parameters. The first parameter is an array, the second parameter will be a number.
+// Your function should return a string that combines all of the values starting 
+// at the index of the number passed in through the end of the array.
+
+function combineArrayElements (array, index) {
+    // need to start indexNumber
+    array.slice(index);
+    // then concat all remaining values in array
+    return array.join(' ');
+} // end combineArrayAndNumber
+
+// Q:  I'm unsure of why the array won't start at the index input
+
+console.log('130-LoopsArraysAndConcatentation');
+console.log(combineArrayElements (['Hello', 'Tim,', 'Good', 'Day!'], 2));           // expected output 'Good Day!'
+console.log(combineArrayElements (['Hello', 'Tim,', 'Good', 'Day!'], 1));           // expected output 'Tim, Good Day!'
+
+
+// --140-LoopsArrayOfObjects--
+// Create a function that takes in an array of employee objects.
+// Each employee object will come in with a property called yearsOfExperience. 
+// Your function should return the total years of experience for all of the employees.
+
+function employeeInfo (array) {
+    let sum = 0;
+    for (let i=0; i<array.length; i++) {
+        sum += array[i].yearsOFExperience;
+    }
+    return sum;
+}
+
+console.log('140-LoopsArrayOfObjects');
+console.log(employeeInfo[                                   
+    {name: 'John', yearsOFExperience: 6},
+    {name: 'Rose', yearsOFExperience: 5}
+]);                                                                                 // expected output 11
+console.log(employeeInfo[                                   
+    {name: 'Amanda', yearsOFExperience: 2},
+    {name: 'Tony', yearsOFExperience: 2}
+]);                                                                                 // expected output 4
+
+
+// --150-LoopsAndTwoDimensionalArrays--
+// Create a function that takes in an array of arrays.
+// Add up all of the numbers in all of the arrays and return the value.
+
+function sumOfArrays (array) {
+    let sum = 0;
+    for (let i=0; i<array.length; i++) {
+        sum + array[i];
+    }
+    return sum;
+} // end sumOfArrays
+
+console.log('150-LoopsAndTwoDimensionalArrays');
+console.log(sumOfArrays([ [1, 2, 3], [4, 5, 6] ]));                                 // expected output 21
+console.log(sumOfArrays([ [0, 2, 4], [6, 8, 10] ]));                                 // expected output 30
