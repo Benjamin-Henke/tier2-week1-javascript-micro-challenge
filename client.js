@@ -7,7 +7,7 @@ function sumOfTwoNumbers (numberOne, numberTwo) {
   return sum;
 } // end sumOfTwoNumbers
 
-console.log('100-Addiiton');
+console.log('100-Addition');
 console.log('5 + 5 equals =',sumOfTwoNumbers(5, 5));            // expected output 10  
 console.log('13 + 15 equals =',sumOfTwoNumbers(13, 15));        // expected output 28
 console.log('2 + 54 equals =',sumOfTwoNumbers(2, 54));          // expected output 56
@@ -31,7 +31,7 @@ function compareTwoNumbers (numberOne, numberTwo) {
     }
 } // end compareTwoNumbers
 
-console.log('110-Conditonal');
+console.log('110-Conditional');
 console.log(compareTwoNumbers(7, 5));           // expected output 'The first number was bigger!'
 console.log(compareTwoNumbers(5, 7));           // expected output 'The second number was bigger!'
 console.log(compareTwoNumbers(7, 7));           // expected output 'The numbers are the same!'
@@ -53,21 +53,26 @@ console.log(sumOfFirstAndLastValues([2, 4, 6, 8, 10]));         // expected outp
 // Q: Unsure of why it also returning a line with undefined 
 
 
-// --130-LoopsArraysAndConcatentation--
+// --130-LoopsArraysAndConcatenation--
 // Create a function that takes two parameters. The first parameter is an array, the second parameter will be a number.
 // Your function should return a string that combines all of the values starting 
 // at the index of the number passed in through the end of the array.
 
-function combineArrayElements (array, index) {
-    // need to start indexNumber
-    array.slice(index);
+function combineArrayElements (strings, index) {
+    // need to start at an index
+    let sectionOfArray = strings.slice(index);
     // then concat all remaining values in array
-    return array.join(' ');
-} // end combineArrayAndNumber
+    return sectionOfArray.join(' ');
+    /*
+    Chaining - another method:
 
-// Q:  I'm unsure of why the array won't start at the index input
+    return strings
+        .slice(index)
+        .join(' ');
+    */
+} // end combineArrayElements
 
-console.log('130-LoopsArraysAndConcatentation');
+console.log('130-LoopsArraysAndConcatenation');
 console.log(combineArrayElements (['Hello', 'Tim,', 'Good', 'Day!'], 2));           // expected output 'Good Day!'
 console.log(combineArrayElements (['Hello', 'Tim,', 'Good', 'Day!'], 1));           // expected output 'Tim, Good Day!'
 
@@ -80,19 +85,19 @@ console.log(combineArrayElements (['Hello', 'Tim,', 'Good', 'Day!'], 1));       
 function employeeInfo (array) {
     let sum = 0;
     for (let i=0; i<array.length; i++) {
-        sum += array[i].yearsOFExperience;
+        sum += array[i].yearsOfExperience;
     }
     return sum;
 }
 
 console.log('140-LoopsArrayOfObjects');
 console.log(employeeInfo[                                   
-    {name: 'John', yearsOFExperience: 6},
-    {name: 'Rose', yearsOFExperience: 5}
+    {name: 'John', yearsOfExperience: 6},
+    {name: 'Rose', yearsOfExperience: 5}
 ]);                                                                                 // expected output 11
 console.log(employeeInfo[                                   
-    {name: 'Amanda', yearsOFExperience: 2},
-    {name: 'Tony', yearsOFExperience: 2}
+    {name: 'Amanda', yearsOfExperience: 2},
+    {name: 'Tony', yearsOfExperience: 2}
 ]);                                                                                 // expected output 4
 
 
@@ -100,14 +105,22 @@ console.log(employeeInfo[
 // Create a function that takes in an array of arrays.
 // Add up all of the numbers in all of the arrays and return the value.
 
-function sumOfArrays (array) {
+function sumOfArrays (twoDimArray) {
     let sum = 0;
-    for (let i=0; i<array.length; i++) {
-        sum + array[i];
-    }
+    for (let innerArray of twoDimArray) {
+        for (let number of innerArray) {
+            sum += number;
+        } // end inner for of loop
+    } // end out for of loop
     return sum;
 } // end sumOfArrays
 
 console.log('150-LoopsAndTwoDimensionalArrays');
-console.log(sumOfArrays([ [1, 2, 3], [4, 5, 6] ]));                                 // expected output 21
-console.log(sumOfArrays([ [0, 2, 4], [6, 8, 10] ]));                                 // expected output 30
+console.log(sumOfArrays([ 
+    [1, 2, 3],
+    [4, 5, 6] 
+]));                                         // expected output 21
+console.log(sumOfArrays([ 
+    [0, 2, 4], 
+    [6, 8, 10] 
+]));                                         // expected output 30
